@@ -75,6 +75,9 @@ internal static class FilterGrammar
                 Span.EqualToIgnoreCase("image")
                     .IgnoreThen(Parse.Return(MessageContentMatchKind.Image))
                     .Try(),
+                Span.EqualToIgnoreCase("sticker")
+                    .IgnoreThen(Parse.Return(MessageContentMatchKind.Sticker))
+                    .Try(),
                 Span.EqualToIgnoreCase("sound")
                     .IgnoreThen(Parse.Return(MessageContentMatchKind.Sound)),
                 Span.EqualToIgnoreCase("pin")

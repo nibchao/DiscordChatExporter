@@ -16,6 +16,7 @@ internal class HasMessageFilter(MessageContentMatchKind kind) : MessageFilter
             MessageContentMatchKind.Video => message.Attachments.Any(file => file.IsVideo),
             MessageContentMatchKind.Image => message.Attachments.Any(file => file.IsImage),
             MessageContentMatchKind.Sound => message.Attachments.Any(file => file.IsAudio),
+            MessageContentMatchKind.Sticker => message.Stickers.Any(),
             MessageContentMatchKind.Pin => message.IsPinned,
             MessageContentMatchKind.Invite => MarkdownParser
                 .ExtractLinks(message.Content)

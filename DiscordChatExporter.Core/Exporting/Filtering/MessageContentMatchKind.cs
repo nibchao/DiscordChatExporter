@@ -10,4 +10,5 @@ internal enum MessageContentMatchKind
     Sound,
     Pin,
     Invite,
+    Sticker,
 }

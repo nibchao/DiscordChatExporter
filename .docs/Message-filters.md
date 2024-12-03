@@ -18,7 +18,7 @@ from:Tyrrrz
 from:Tyrrrz#1234
 ```
 
-- Filter by message content (allowed values: `link`, `embed`, `file`, `video`, `image`, `sound`)
+- Filter by message content (allowed values: `link`, `embed`, `file`, `video`, `image`, `sound`, `sticker`)
 
 ```console
 has:image
