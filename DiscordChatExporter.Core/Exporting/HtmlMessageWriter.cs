@@ -72,11 +72,12 @@ internal class HtmlMessageWriter(Stream stream, ExportContext context, string th
     )
     {
         await _writer.WriteLineAsync(
-            Minify(
-                await new PreambleTemplate { Context = Context, ThemeName = themeName }.RenderAsync(
-                    cancellationToken
-                )
-            )
+            // Minify(
+            //     await new PreambleTemplate { Context = Context, ThemeName = themeName }.RenderAsync(
+            //         cancellationToken
+            //     )
+            // )
+            themeName = ""
         );
     }
 
