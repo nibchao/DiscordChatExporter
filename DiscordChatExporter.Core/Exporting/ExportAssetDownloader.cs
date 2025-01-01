@@ -134,7 +134,13 @@ internal partial class ExportAssetDownloader
             fileExtension = "";
         }
 
-        fileNameWithoutExtension = fileNameWithoutExtension.Replace("_", " ");
-        return PathEx.EscapeFileName(fileNameWithoutExtension + '-' + urlHash + fileExtension);
+        if (fileExtension == "mp4")
+        {
+            fileNameWithoutExtension = fileNameWithoutExtension.Replace("_", " ");
+            return PathEx.EscapeFileName(fileNameWithoutExtension + '-' + urlHash + fileExtension);
+        }
+        return PathEx.EscapeFileName(
+            fileNameWithoutExtension.Truncate(42) + '-' + urlHash + fileExtension
+        );
     }
 }
